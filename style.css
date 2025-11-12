@@ -881,11 +881,8 @@ body {
     }
 }
 
-/* ===== AJUSTES APENAS PARA A SEGUNDA PÁGINA NO MOBILE ===== */
-
-/* Para telas menores que 1100px (Tablet e Mobile) */
+/* Media Queries para responsividade */
 @media (max-width: 1100px) {
-    /* PRIMEIRA PÁGINA VOLTA AO NORMAL */
     .container {
         flex-direction: column;
         min-height: auto;
@@ -915,7 +912,6 @@ body {
         max-width: 100%;
     }
 
-    /* SEGUNDA PÁGINA - AJUSTES MOBILE */
     .showcase-container {
         grid-template-columns: 1fr;
         gap: 50px;
@@ -924,7 +920,6 @@ body {
     .showcase-content {
         padding-right: 0;
         text-align: center;
-        order: 2; /* Conteúdo fica DEPOIS das imagens */
     }
 
     .showcase-header h2 {
@@ -932,46 +927,25 @@ body {
     }
 
     .dual-images-container {
-        height: 600px; /* Container MAIOR no mobile */
+        height: 500px;
         flex-direction: column;
-        gap: 30px;
-        order: 1; /* Imagens ficam PRIMEIRO */
+        gap: 20px;
     }
 
     .image-wrapper {
         height: 45%;
-        width: 100%;
-    }
-
-    .floating-model {
-        max-height: 90%; /* Imagens maiores dentro do container */
-        max-width: 90%;
     }
 
     .showcase-cta {
         text-align: center;
-        margin-top: 30px;
     }
 
     .connection-line {
         width: 150px;
         transform: rotate(90deg);
     }
-
-    .comparison-stats {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .btn-secondary {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-        display: block;
-    }
 }
 
-/* Para telas menores que 768px (Mobile) */
 @media (max-width: 768px) {
     .content {
         padding: 40px 30px;
@@ -994,7 +968,6 @@ body {
         font-size: 16px;
     }
 
-    /* SEGUNDA PÁGINA - AJUSTES MOBILE */
     .showcase-header h2 {
         font-size: 2.2rem;
     }
@@ -1003,30 +976,27 @@ body {
         font-size: 1.1rem;
     }
 
-    .dual-images-container {
-        height: 500px; /* Ajuste proporcional */
-    }
-
-    .image-wrapper {
-        height: 48%;
+    .comparison-stats {
+        gap: 20px;
     }
 
     .stat-item {
         padding: 20px;
     }
 
+    .dual-images-container {
+        height: 400px;
+    }
+
+    .floating-model {
+        max-height: 80%;
+    }
+
     .stat-number {
         font-size: 2rem;
     }
-
-    .btn-secondary {
-        width: 100%;
-        max-width: 320px;
-        padding: 16px 35px;
-    }
 }
 
-/* Para telas menores que 480px (Mobile pequeno) */
 @media (max-width: 480px) {
     .logo-line {
         font-size: 32px;
@@ -1041,13 +1011,12 @@ body {
         font-size: 15px;
     }
 
-    /* SEGUNDA PÁGINA - AJUSTES MOBILE */
     .showcase-header h2 {
         font-size: 1.8rem;
     }
 
     .dual-images-container {
-        height: 450px; /* Altura generosa para as duas imagens */
+        height: 300px;
     }
 
     .image-label {
@@ -1062,26 +1031,50 @@ body {
     .floating-element {
         font-size: 1rem;
     }
+}
+
+/* ===== APENAS AS ALTERAÇÕES ESPECÍFICAS PARA AS DUAS IMAGENS DA SEGUNDA PÁGINA NO MOBILE ===== */
+@media (max-width: 768px) {
+    .dual-images-container {
+        height: 600px !important; /* Imagens MUITO maiores no mobile */
+        gap: 40px !important;
+    }
+    
+    .image-wrapper {
+        height: 250px !important; /* Altura fixa maior para cada imagem */
+    }
+    
+    .floating-model {
+        max-height: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    .showcase-cta {
+        margin-top: 40px;
+    }
     
     .btn-secondary {
-        padding: 15px 30px;
-        font-size: 15px;
-        max-width: 280px;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        display: block;
+        padding: 18px 40px;
+        font-size: 1.1rem;
     }
+}
 
-    .comparison-stats {
-        gap: 15px;
+@media (max-width: 480px) {
+    .dual-images-container {
+        height: 500px !important; /* Ainda grande mas ajustado para telas menores */
+        gap: 30px !important;
     }
-
-    .stat-item {
-        padding: 15px 10px;
+    
+    .image-wrapper {
+        height: 220px !important;
     }
-
-    .stat-number {
-        font-size: 1.6rem;
-    }
-
-    .stat-label {
-        font-size: 1rem;
+    
+    .btn-secondary {
+        max-width: 300px;
+        padding: 16px 35px;
     }
 }
