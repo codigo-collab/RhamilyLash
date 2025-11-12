@@ -881,7 +881,7 @@ body {
     }
 }
 
-/* Media Queries para responsividade */
+/* ===== APENAS AS ALTERAÇÕES ESPECÍFICAS PARA MOBILE ===== */
 @media (max-width: 1100px) {
     .container {
         flex-direction: column;
@@ -920,6 +920,7 @@ body {
     .showcase-content {
         padding-right: 0;
         text-align: center;
+        order: 2; /* CONTEÚDO FICA DEPOIS DAS IMAGENS */
     }
 
     .showcase-header h2 {
@@ -927,22 +928,39 @@ body {
     }
 
     .dual-images-container {
-        height: 500px;
+        height: 700px; /* IMAGENS MUITO MAIORES NO MOBILE */
         flex-direction: column;
-        gap: 20px;
+        gap: 50px;
+        order: 1; /* IMAGENS FICAM PRIMEIRO */
     }
 
     .image-wrapper {
-        height: 45%;
+        height: 300px; /* CADA IMAGEM MAIOR */
+        width: 100%;
+    }
+
+    .floating-model {
+        max-height: 100%;
+        max-width: 100%;
     }
 
     .showcase-cta {
         text-align: center;
+        margin-top: 40px;
     }
 
     .connection-line {
         width: 150px;
         transform: rotate(90deg);
+    }
+
+    .btn-secondary {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+        display: block;
+        padding: 18px 40px;
+        font-size: 1.1rem;
     }
 }
 
@@ -985,15 +1003,20 @@ body {
     }
 
     .dual-images-container {
-        height: 400px;
+        height: 600px; /* AJUSTE PROPORCIONAL */
     }
 
-    .floating-model {
-        max-height: 80%;
+    .image-wrapper {
+        height: 250px;
     }
 
     .stat-number {
         font-size: 2rem;
+    }
+
+    .btn-secondary {
+        max-width: 320px;
+        padding: 16px 35px;
     }
 }
 
@@ -1016,7 +1039,11 @@ body {
     }
 
     .dual-images-container {
-        height: 300px;
+        height: 500px; /* AINDA GRANDE MAS AJUSTADO */
+    }
+
+    .image-wrapper {
+        height: 200px;
     }
 
     .image-label {
@@ -1031,50 +1058,9 @@ body {
     .floating-element {
         font-size: 1rem;
     }
-}
 
-/* ===== APENAS AS ALTERAÇÕES ESPECÍFICAS PARA AS DUAS IMAGENS DA SEGUNDA PÁGINA NO MOBILE ===== */
-@media (max-width: 768px) {
-    .dual-images-container {
-        height: 600px !important; /* Imagens MUITO maiores no mobile */
-        gap: 40px !important;
-    }
-    
-    .image-wrapper {
-        height: 250px !important; /* Altura fixa maior para cada imagem */
-    }
-    
-    .floating-model {
-        max-height: 100% !important;
-        max-width: 100% !important;
-    }
-    
-    .showcase-cta {
-        margin-top: 40px;
-    }
-    
     .btn-secondary {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-        display: block;
-        padding: 18px 40px;
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .dual-images-container {
-        height: 500px !important; /* Ainda grande mas ajustado para telas menores */
-        gap: 30px !important;
-    }
-    
-    .image-wrapper {
-        height: 220px !important;
-    }
-    
-    .btn-secondary {
-        max-width: 300px;
-        padding: 16px 35px;
+        max-width: 280px;
+        padding: 15px 30px;
     }
 }
