@@ -881,143 +881,194 @@ body {
     }
 }
 
-/* Media Queries para responsividade - AJUSTES SOLICITADOS */
+/* ===== NOVOS AJUSTES MOBILE - MÉTODO ALTERNATIVO ===== */
+
+/* Para telas menores que 1100px (Tablet e Mobile) */
 @media (max-width: 1100px) {
     .container {
-        flex-direction: column;
+        flex-direction: column-reverse; /* INVERTE A ORDEM - imagem primeiro */
         min-height: auto;
+        margin: 20px;
     }
     
     .content {
         flex: none;
         width: 100%;
-        padding: 50px 40px;
-        order: 2; /* Coloca o conteúdo ABAIXO da imagem */
+        padding: 40px 30px;
+        text-align: center;
     }
     
     .image-container {
         flex: none;
         width: 100%;
-        height: 500px; /* Imagem maior no mobile */
-        order: 1; /* Coloca a imagem ACIMA do conteúdo */
+        height: 60vh; /* Imagem MUITO maior no mobile */
+        min-height: 400px;
     }
     
     .logo-line {
-        font-size: 50px;
+        font-size: 3.5rem;
     }
     
     .btn-container {
         justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .btn {
+        width: 90%;
+        max-width: 350px;
+        padding: 18px 40px;
+        font-size: 1.1rem;
     }
     
     .description {
         max-width: 100%;
+        margin: 25px auto;
+        text-align: center;
+        padding-left: 0;
+        border-left: none;
+        border-top: 3px solid var(--accent);
+        padding-top: 15px;
     }
 
+    /* Ajustes para a segunda página */
     .showcase-container {
         grid-template-columns: 1fr;
-        gap: 50px;
+        gap: 40px;
+        padding: 20px;
     }
 
     .showcase-content {
         padding-right: 0;
         text-align: center;
+        order: 2; /* Conteúdo fica depois das imagens */
     }
 
     .showcase-header h2 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .dual-images-container {
-        height: 600px; /* Imagens maiores no mobile */
+        height: 70vh; /* Container MUITO maior */
+        min-height: 500px;
         flex-direction: column;
-        gap: 30px;
+        gap: 40px;
+        order: 1; /* Imagens ficam primeiro */
     }
 
     .image-wrapper {
-        height: 48%; /* Aumenta o espaço para cada imagem */
+        height: 45%;
+        width: 100%;
+    }
+
+    .floating-model {
+        max-height: 90%; /* Imagens maiores dentro do container */
+        max-width: 90%;
     }
 
     .showcase-cta {
         text-align: center;
+        margin-top: 30px;
     }
 
     .connection-line {
-        width: 150px;
+        width: 120px;
         transform: rotate(90deg);
+    }
+
+    .comparison-stats {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
+/* Para telas menores que 768px (Mobile) */
 @media (max-width: 768px) {
-    .content {
-        padding: 40px 30px;
-        order: 2; /* Mantém conteúdo abaixo */
+    .container {
+        margin: 15px;
+        border-radius: 20px;
     }
     
-    .logo-line {
-        font-size: 40px;
+    .content {
+        padding: 35px 25px;
     }
     
     .image-container {
-        height: 450px; /* Imagem ainda maior em telas menores */
-        order: 1; /* Mantém imagem acima */
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .logo-line {
+        font-size: 2.8rem;
     }
     
     .btn {
-        padding: 18px 35px;
-        font-size: 16px;
-        width: 100%; /* Botão ocupa toda largura */
-        max-width: 300px;
-        margin: 0 auto; /* Centraliza o botão */
+        width: 100%;
+        max-width: 320px;
+        padding: 16px 35px;
+        font-size: 1rem;
     }
     
     .description {
-        font-size: 16px;
+        font-size: 1rem;
+        margin: 20px 0;
     }
 
     .showcase-header h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
 
     .showcase-header p {
         font-size: 1.1rem;
     }
 
-    .comparison-stats {
-        gap: 20px;
+    .dual-images-container {
+        height: 60vh;
+        min-height: 400px;
+        gap: 30px;
+    }
+
+    .image-wrapper {
+        height: 48%;
     }
 
     .stat-item {
-        padding: 20px;
-    }
-
-    .dual-images-container {
-        height: 500px; /* Ajuste proporcional */
-    }
-
-    .floating-model {
-        max-height: 85%; /* Imagens maiores dentro do container */
+        padding: 20px 15px;
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .social-icons {
+        justify-content: center;
+        margin-top: 30px;
     }
 }
 
+/* Para telas menores que 480px (Mobile pequeno) */
 @media (max-width: 480px) {
-    .logo-line {
-        font-size: 32px;
+    .container {
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .content {
+        padding: 30px 20px;
     }
     
     .image-container {
-        height: 400px; /* Boa altura para celulares pequenos */
-        order: 1;
+        height: 45vh;
+        min-height: 300px;
+    }
+    
+    .logo-line {
+        font-size: 2.2rem;
     }
     
     .btn {
-        padding: 16px 30px;
-        font-size: 15px;
-        width: 100%;
+        padding: 15px 30px;
+        font-size: 0.95rem;
         max-width: 280px;
     }
 
@@ -1026,12 +1077,15 @@ body {
     }
 
     .dual-images-container {
-        height: 450px; /* Altura generosa para as duas imagens */
+        height: 50vh;
+        min-height: 350px;
+        gap: 25px;
     }
 
     .image-label {
         font-size: 0.8rem;
         padding: 6px 15px;
+        bottom: 15px;
     }
 
     .sparkle-center {
@@ -1042,8 +1096,45 @@ body {
         font-size: 1rem;
     }
     
-    /* Garante que o botão fique bem posicionado abaixo de tudo */
     .btn-container {
-        margin-top: 30px;
+        margin-top: 25px;
+    }
+
+    .comparison-stats {
+        gap: 15px;
+    }
+
+    .stat-item {
+        padding: 15px 10px;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+}
+
+/* Ajuste extra para telas muito pequenas */
+@media (max-width: 360px) {
+    .logo-line {
+        font-size: 1.8rem;
+    }
+    
+    .image-container {
+        height: 40vh;
+        min-height: 250px;
+    }
+    
+    .dual-images-container {
+        height: 45vh;
+        min-height: 300px;
+    }
+    
+    .btn {
+        padding: 14px 25px;
+        font-size: 0.9rem;
     }
 }
